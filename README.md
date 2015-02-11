@@ -1,5 +1,7 @@
 # perfectlytimedphotos-simple-site-4fun
-just a simple site using rails. (just training)
+just a simple site using rails. (just training)  
+
+If I do something wrong, or there is a better way, please tell me.    
 
 
 It will use this [crawler data](https://github.com/wkudaka/perfectlytimedphotos-crawler-4fun)
