@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Photos</h1>
+
+
+<ul>
+  <% @photos.each do |photo| %>
+    <li>
+      <a href="<%= photo_path(photo) %>">
+        <img src="<%= photo.image_thumbnail_url %>" alt="<%= photo.image_title %>" />
+      </a>
+    </li>
+  <% end %>
+</ul>
+
+<div class="pagination">
+  <%= will_paginate @photos %>
+</div>
+
+
