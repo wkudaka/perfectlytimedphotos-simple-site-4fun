@@ -19,5 +19,14 @@ require 'rails_helper'
 # that an instance is receiving a specific message.
 
 RSpec.describe PhotosController, type: :controller do
-  pending "add some examples to (or delete) #{__FILE__}"
+  
+  context "index" do
+    describe "GET" do
+      it "has a 200 status code" do
+        get :index
+        expect(response.status).to eq(200)
+      end
+    end
+  end
+  
 end
