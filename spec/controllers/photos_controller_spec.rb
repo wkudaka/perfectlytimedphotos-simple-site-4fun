@@ -19,12 +19,27 @@ require 'rails_helper'
 # that an instance is receiving a specific message.
 
 RSpec.describe PhotosController, type: :controller do
+
+  let(:photos){
+    Photo.where("image_thumbnail_url is not null").paginate(:page => 1)
+  }
+
   
   context "index" do
+
+    before(:context) do
+      create_list(:photo, 20)
+    end
+
     describe "GET" do
       it "has a 200 status code" do
         get :index
         expect(response.status).to eq(200)
+      end
+
+      it "has a list of photos" do
+        get :index
+        expect(assigns["photos"]).to eq(photos)
       end
     end
   end

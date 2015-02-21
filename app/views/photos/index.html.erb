@@ -1,20 +1,48 @@
-<p id="notice"><%= notice %></p>
+<div class="modal fade" id="photo_modal" tabindex="-1" role="dialog" aria-labelledby="photo_modal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="photo_modal_title">Modal title</h4>
+      </div>
+      <div class="modal-body">
+      </div>
+    </div>
+  </div>
+</div>
 
-<h1>Listing Photos</h1>
 
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+      <p id="notice"><%= notice %></p>
 
-<ul>
-  <% @photos.each do |photo| %>
-    <li>
-      <a href="<%= photo_path(photo) %>">
-        <img src="<%= photo.image_thumbnail_url %>" alt="<%= photo.image_title %>" />
-      </a>
-    </li>
-  <% end %>
-</ul>
+      <h1>Listing Photos</h1>
 
-<div class="pagination">
-  <%= will_paginate @photos %>
+      
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <ul id="photo_list">
+        <% @photos.each do |photo| %>
+          <li>
+            <a href="<%= photo_path(photo) %>" data-image="<%= photo.image_url %>" data-title="<%= photo.image_title %>">
+              <img src="<%= photo.image_thumbnail_url %>" alt="<%= photo.image_title %>" />
+            </a>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="pagination">
+        <%= will_paginate @photos %>
+      </div>
+    </div>
+  </div>
+  
 </div>
 
 

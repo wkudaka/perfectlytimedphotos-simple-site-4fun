@@ -6,12 +6,24 @@
 .photos{
 
     ul li{
+      position: relative;
       float:left;
-      margin-left: 10px
-    }  
+      margin-left: 1%;
+      width: 9%;
+
+      img{
+        width: 100%;
+      }
+    }
 
     .pagination{
       clear:both;
+    }
+
+    #photo_modal{
+      img{
+        width: 100%;
+      }
     }
 
 }
